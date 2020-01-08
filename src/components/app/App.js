@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from '../../assets/images/logo.svg';
+import Form from '../form/form';
+import TestForm from '../testForm/testForm';
+import Practice from '../testForm/practice';
+import Todo from '../todo/todo';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +24,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <Form />
+      <TestForm />
+      <Practice />
+      <Todo />
     </div>
   );
 }
