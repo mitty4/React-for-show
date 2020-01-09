@@ -24,10 +24,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <Todo />
       <Form />
       <TestForm />
       <Practice />
-      <Todo />
+
     </div>
   );
 }
