@@ -26,12 +26,24 @@ function Todo(){
   ]);
 
   const handleCheck = (e) => {
-      alert(e.target.key.value.toString());
-      // setTodos([{...todos, isCompleted: true}])
+
+    if (!e.target.checked){
+      let tempState = Object.assign([], todos);
+      console.log(e.target.checked)
+      tempState[e.target.id].isCompleted = false;
+      console.log(todos)
+      setTodos(tempState)
+    } else {
+        let tempState = Object.assign([], todos);
+        console.log(e.target.checked)
+        tempState[e.target.id].isCompleted = true;
+        console.log(todos)
+        setTodos(tempState)
+    }
   };
 
   const listItems = todos.map((todo, index) =>
-    <li key={index}>{todo.content} <input onChange={handleCheck} type="checkbox" checked={todo.isCompleted} /></li>
+    <li>{todo.content} <input id={index.toString()} onChange={handleCheck} type="checkbox" checked={todo.isCompleted} /></li>
   );
 
 
